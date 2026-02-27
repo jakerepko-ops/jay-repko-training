@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Repko | Personal Training | Philadelphia Suburbs</title>
+    <meta name="description" content="Personal training with Jay Repko — former Philadelphia Eagles tight end. Group classes, one-on-one training, and in-home sessions in the Philadelphia suburbs.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #003338;
+            --green-light: #004C54;
+            --silver: #A5ACAF;
+            --white: #FFFFFF;
+            --off-white: #F7F7F5;
+            --charcoal: #1A1A1A;
+            --warm-gray: #6B6B6B;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--green);
+            color: var(--white);
+            padding: 60px 24px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--green);
+            clip-path: ellipse(55% 100% at 50% 0%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            opacity: 0.85;
+            max-width: 540px;
+            margin: 0 auto 32px;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--white);
+            color: var(--green);
+            padding: 16px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        /* PHOTO PLACEHOLDER */
+        .photo-section {
+            text-align: center;
+            padding: 60px 24px 20px;
+            background: var(--off-white);
+        }
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--silver);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--warm-gray);
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 40px 24px 60px;
+            background: var(--off-white);
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: var(--green);
+            text-align: center;
+        }
+        .about p {
+            color: var(--warm-gray);
+            font-size: 17px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .nfl-stat {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--green);
+            display: block;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: var(--warm-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 60px 24px;
+            background: var(--white);
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: var(--green);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--charcoal);
+        }
+        .service-card p {
+            color: var(--warm-gray);
+            font-size: 15px;
+        }
+
+        /* TESTIMONIAL */
+        .testimonial {
+            padding: 60px 24px;
+            background: var(--green);
+            color: var(--white);
+            text-align: center;
+        }
+        .testimonial blockquote {
+            font-size: clamp(18px, 3vw, 22px);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        .testimonial .attribution {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        .testimonial-note {
+            margin-top: 20px;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* WHO IT'S FOR */
+        .audience {
+            padding: 60px 24px;
+            background: var(--off-white);
+        }
+        .audience h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: var(--green);
+        }
+        .audience .subtitle {
+            text-align: center;
+            color: var(--warm-gray);
+            margin-bottom: 36px;
+            font-size: 17px;
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .audience-item {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 24px;
+            border-left: 4px solid var(--green);
+        }
+        .audience-item h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+        .audience-item p {
+            font-size: 15px;
+            color: var(--warm-gray);
+        }
+
+        /* CONTACT / CTA */
+        .contact {
+            padding: 60px 24px;
+            background: var(--white);
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: var(--green);
+        }
+        .contact p {
+            color: var(--warm-gray);
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+        .contact-btn:hover {
+            transform: translateY(-2px);
+        }
+        .contact-btn.primary {
+            background: var(--green);
+            color: var(--white);
+        }
+        .contact-btn.secondary {
+            background: var(--off-white);
+            color: var(--green);
+            border: 2px solid var(--green);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 24px;
+            font-size: 14px;
+        }
+        footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            .hero { padding: 40px 20px 60px; }
+            .nfl-stat { gap: 24px; }
+            .contact-methods { flex-direction: column; align-items: center; }
+            .contact-btn { width: 100%; max-width: 300px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">Former Philadelphia Eagle</div>
+        <h1>Jay Repko</h1>
+        <p class="hero-subtitle">Personal training built on decades of elite athletic experience. Serving the Philadelphia suburbs.</p>
+        <a href="#contact" class="hero-cta">Get Started</a>
+    </section>
+
+    <!-- PHOTO -->
+    <section class="photo-section">
+        <div class="photo-frame">
+            <!-- Replace this text with: <img src="jay-photo.jpg" alt="Jay Repko"> -->
+            Add Photo
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="container">
+            <h2>Train With an Athlete Who's Been There</h2>
+            <p>Jay Repko played tight end for the Philadelphia Eagles in 1987. At 6'3" and 240 lbs, he competed at the highest level of professional football. Today, at 67, he brings that same discipline and knowledge to every client he trains.</p>
+            <p>Whether you're just getting started or looking to compete, Jay meets you where you are and builds a program around how your body actually moves.</p>
+
+            <div class="nfl-stat">
+                <div class="stat">
+                    <span class="stat-number">NFL</span>
+                    <span class="stat-label">Pro Athlete</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Years Coaching</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">67</span>
+                    <span class="stat-label">& Still At It</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+        <h2>What I Offer</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#128170;</div>
+                <h3>One-on-One Training</h3>
+                <p>Personalized sessions at your gym or in your home. Programs tailored to your goals, your body, and your schedule.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#127947;</div>
+                <h3>Group Classes</h3>
+                <p>Small group sessions that keep you accountable with a community. All fitness levels welcome.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#127968;</div>
+                <h3>In-Home Sessions</h3>
+                <p>Got a garage gym or home setup? I'll come to you. No gym membership required.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="audience">
+        <h2>Who I Work With</h2>
+        <p class="subtitle">I've trained everyone from beginners to competitive athletes.</p>
+        <div class="audience-grid">
+            <div class="audience-item">
+                <h3>Adults Getting Started</h3>
+                <p>New to fitness or getting back into it after years away. No judgment, just smart programming.</p>
+            </div>
+            <div class="audience-item">
+                <h3>Active Adults 50+</h3>
+                <p>Strength, mobility, and longevity. I'm 67 and I train every day — I understand what your body needs.</p>
+            </div>
+            <div class="audience-item">
+                <h3>Youth Athletes</h3>
+                <p>Speed, strength, and fundamentals for high school and college-bound athletes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL PLACEHOLDER -->
+    <section class="testimonial">
+        <blockquote>"Add a real client testimonial here. Ask your best client to write 1-2 sentences about training with you."</blockquote>
+        <div class="attribution">— Client Name, Location</div>
+        <div class="testimonial-note">Tip: Ask 2-3 clients for a quick quote you can use here.</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>Let's Get Started</h2>
+        <p>Call, text, or reach out on social. First conversation is always free.</p>
+        <div class="contact-methods">
+            <a href="tel:+1XXXXXXXXXX" class="contact-btn primary">&#128222; Call or Text</a>
+            <a href="mailto:jayrepko@email.com" class="contact-btn secondary">&#9993; Email</a>
+        </div>
+        <p style="margin-top: 16px; font-size: 14px;">
+            <a href="#" style="color: var(--green); text-decoration: none; margin: 0 12px;">Facebook</a>
+            <a href="#" style="color: var(--green); text-decoration: none; margin: 0 12px;">Instagram</a>
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Jay Repko Training &middot; Philadelphia Suburbs</p>
+    </footer>
+
+</body>
+</html>
